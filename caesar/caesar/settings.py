@@ -20,7 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'wo%z((afs!xyw^i)z@c#2z)pl_57$i#sfsk0bzu=&9&ke_=8mk'
+=======
+SECRET_KEY = 'dzt8=c9%b8ysl_(fb*777@m75govl3c^dh-^mtp)d3zz%1-^to'
+>>>>>>> website
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +35,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
+=======
+    'home.apps.HomeConfig',
+
+>>>>>>> website
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,8 +84,17 @@ WSGI_APPLICATION = 'caesar.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+=======
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'caesarFinal',
+        'USER': 'ruixin',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
+        'PORT': '3306',
+>>>>>>> website
     }
 }
 
