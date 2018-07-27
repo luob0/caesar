@@ -7,3 +7,7 @@ def index(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
     context = {}
     return render(request, 'home/home.html', context)
+
+def signin(request):
+    context = {}
+    return render(request, 'home/signin.html', context)
