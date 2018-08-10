@@ -10,3 +10,6 @@ python manage.py migrate
 # pip install mysqlclient
 sudo apt-get install python3-dev libmysqlclient-dev
 pip install mysqlclient
+
+# insert account table
+insert into home_account ( account, passwd) values ( 111, 111);

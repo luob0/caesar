@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'show_caesar.apps.ShowCaesarConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
