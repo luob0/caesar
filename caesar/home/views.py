@@ -9,5 +9,8 @@ def index(request):
     return render(request, 'home/home.html', context)
 
 def signin(request):
+    if request.is_ajax():
+        getvalue = request.GET.get('value')
+        print (getvalue)
     context = {}
     return render(request, 'home/signin.html', context)
