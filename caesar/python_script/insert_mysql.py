@@ -6,7 +6,7 @@ import csv
 db = pymysql.connect("localhost","ruixin","123","caesarFinal")
 cursor = db.cursor()
 
-file=csv.reader(open('../0809.csv'))
+file=csv.reader(open('./0809.csv'))
 i=0
 for row in file:
     i = i+1
