@@ -47,7 +47,7 @@ for row in file:
         if (tp+tn+fp+fn)!=0:
             accuracy = ((tp+tn)*100.0)/(tp+tn+fp+fn)
 
-        mysql = "insert into show_caesar_data value("+str(i)+","+str(accuracy)+","+str(precision)+","+str(recall)+","+str(disturb)+");"
+        mysql = "insert into show_caesar_data value("+str(i-1)+","+str(accuracy)+","+str(precision)+","+str(recall)+","+str(disturb)+");"
         cursor.execute(mysql)
         # print (sql)
         db.commit()
