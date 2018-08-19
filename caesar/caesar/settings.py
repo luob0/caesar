@@ -25,8 +25,8 @@ SECRET_KEY = 'dzt8=c9%b8ysl_(fb*777@m75govl3c^dh-^mtp)d3zz%1-^to'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ['100.64.136.52']
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
