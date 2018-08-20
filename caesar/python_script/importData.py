@@ -32,6 +32,8 @@ for row in file:
 
         if row[14] == '':
             row[14] = 'null'
+        else:
+            row[14] = "'"+row[14]+"'"
 
         if row[16] == '':
             row[16] = 'null'
