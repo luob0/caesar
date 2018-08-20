@@ -9,10 +9,12 @@ cursor = db.cursor()
 
 file=csv.reader(open('./module_S.csv'))
 i=0
+j = 1
 for row in file:
     i = i+1
-    if i>1:
-        id = i-1
+    if i>773143:
+        id = j
+        j = j+1
         sid = row[0]
         test = row[1]
         truth = row[2]

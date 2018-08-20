@@ -10,8 +10,6 @@ def showcaesar(request):
     if request.is_ajax():
         getvalue = int(request.GET.get('value'))
         print (getvalue)
-
-        # database table: show_caesar_transaction
         tradeid = Transaction.objects.get(id=getvalue).tradeid
         module = Transaction.objects.get(id=getvalue).module
         test = Transaction.objects.get(id=getvalue).test
@@ -19,8 +17,46 @@ def showcaesar(request):
         disturb = round(Data.objects.get(id=getvalue).disturb, 2)
         precision = round(Data.objects.get(id=getvalue).precision, 2)
         accuracy = round(Data.objects.get(id=getvalue).accuracy, 2)
+        # print (accuracy)
 
-        return HttpResponse(json.dumps({"module": module, "recall": recall, "disturb": disturb, "precision":precision, "accuracy": accuracy, "test": test,"rtest":1,"stest":0,"atest":0,"cardnum":1111111,"dmxind01":'c',"dmx10bytestring01":12107,"dmx2bytestring02":13,"rqotrantimealt":2017/6/1,"tcaclientamt":728.92,"rua20bytestring001":123,"ruaind004":1,"dmxind03":0,"sign":0}))
+        # database table: show_caesar_moduler
+        rtest_tmp = ModuleR.objects.get(rid=tradeid).test
+        # database table: show_caesar_modules
+        stest_tmp = ModuleS.objects.get(sid=tradeid).test
+        # database table: show_caesar_modulea
+        atest_tmp = ModuleA.objects.get(aid=tradeid).test
+        # database table: show_caesar_modulep
+        ptest_tmp = ModuleP.objects.get(pid=tradeid).test
+        if rtest_tmp:
+          rtest = 1
+        else:
+          rtest = 0
+        if stest_tmp:
+          stest = 1
+        else:
+          stest = 0
+        if atest_tmp:
+          atest = 1
+        else:
+          atest = 0
+        if ptest_tmp:
+          ptest = 1
+        else:
+          ptest = 0
+
+        # database table: show_caesar_caesardata
+        cardnum = CaesarData.objects.get(caesarid=tradeid).cardnum
+        dmxind01 = CaesarData.objects.get(caesarid=tradeid).dmxind01
+        dmx10bytestring01 = CaesarData.objects.get(caesarid=tradeid).dmx10bytestring01
+        dmx2bytestring02 = CaesarData.objects.get(caesarid=tradeid).dmx2bytestring02
+        rqotrantimealt = CaesarData.objects.get(caesarid=tradeid).rqotrantimealt
+        tcaclientamt = CaesarData.objects.get(caesarid=tradeid).tcaclientamt
+        rua20bytestring001 = CaesarData.objects.get(caesarid=tradeid).rua20bytestring001
+        ruaind004 = CaesarData.objects.get(caesarid=tradeid).ruaind004
+        dmxind03 = CaesarData.objects.get(caesarid=tradeid).dmxind03
+        sign = CaesarData.objects.get(caesarid=tradeid).sign
+
+        return HttpResponse(json.dumps({"module": module, "recall": recall, "disturb": disturb, "precision":precision, "accuracy": accuracy, "test": test,"p":ptest,"rr":rtest,"sa":stest,"ae":atest,"transaction_id":tradeid,"transaction_card_number":cardnum,"transaction_card_type":'dmxind01',"transaction_code":dmx10bytestring01,"transaction_type":dmx2bytestring02,"transaction_time":rqotrantimealt,"transaction_amount":tcaclientamt,"merchant_code":rua20bytestring001,"signature_verification_method":ruaind004,"customary_ip_tag":dmxind03,"fraudulent_tag":sign}))
 
     context = {}
     return render(request, 'show_caesar/show_caesar.html', context)
