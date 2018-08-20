@@ -56,7 +56,7 @@ def showcaesar(request):
         dmxind03 = CaesarData.objects.get(caesarid=tradeid).dmxind03
         sign = CaesarData.objects.get(caesarid=tradeid).sign
 
-        return HttpResponse(json.dumps({"module": module, "recall": recall, "disturb": disturb, "precision":precision, "accuracy": accuracy, "test": test,"p":ptest,"rr":rtest,"sa":stest,"ae":atest,"transaction_id":tradeid,"transaction_card_number":cardnum,"transaction_card_type":'dmxind01',"transaction_code":dmx10bytestring01,"transaction_type":dmx2bytestring02,"transaction_time":rqotrantimealt,"transaction_amount":tcaclientamt,"merchant_code":rua20bytestring001,"signature_verification_method":ruaind004,"customary_ip_tag":dmxind03,"fraudulent_tag":sign}))
+        return HttpResponse(json.dumps({"module": module, "recall": recall, "disturb": disturb, "precision":precision, "accuracy": accuracy, "test": test,"p":ptest,"rr":rtest,"sa":stest,"ae":atest,"Transaction_ID":tradeid,"Transaction_Card_Number":cardnum,"Transaction_Card_Type":'dmxind01',"Transaction_Code":dmx10bytestring01,"Transaction_Type":dmx2bytestring02,"Transaction_Time":rqotrantimealt,"Transaction_Amount":tcaclientamt,"Merchant_Code":rua20bytestring001,"Signature_Verification_Method":ruaind004,"Customary_IP_Tag":dmxind03,"Fraudulent_Tag":sign}))
 
     context = {}
     return render(request, 'show_caesar/show_caesar.html', context)
