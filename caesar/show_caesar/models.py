@@ -2,6 +2,21 @@
 
 from django.db import models
 
+
+class Trade(models.Model):
+    tradeid = models.PositiveIntegerField(default=0)
+    test = models.PositiveSmallIntegerField(default=0)
+    truth = models.PositiveSmallIntegerField(default=0)
+    module = models.PositiveSmallIntegerField(default=0)
+    p = models.SmallIntegerField(default=0)
+    r = models.SmallIntegerField(default=0)
+    s = models.SmallIntegerField(default=0)
+    a = models.SmallIntegerField(default=0)
+    accuracy = models.FloatField(default=0)
+    precision = models.FloatField(default=0)
+    recall = models.FloatField(default=0)
+    disturb = models.FloatField(default=0)
+
 # Create your models here.
 class Transaction(models.Model):
     tradeid = models.PositiveIntegerField(default=0)
