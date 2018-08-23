@@ -6,7 +6,7 @@ import pymysql
 db = pymysql.connect("localhost","ruixin","123","caesarFinal")
 cursor = db.cursor()
 
-file=csv.reader(open('./S2_test.csv'))
+file=csv.reader(open('/home/ruixin/Projects_Databak/S2_test.csv'))
 i = 0
 j = 1
 for row in file:
