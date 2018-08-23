@@ -16,41 +16,26 @@ class Trade(models.Model):
     precision = models.FloatField(default=0)
     recall = models.FloatField(default=0)
     disturb = models.FloatField(default=0)
+    module0 = models.FloatField(default=0)
+    module1 = models.FloatField(default=0)
+    module2 = models.FloatField(default=0)
+    module3 = models.FloatField(default=0)
+    module4 = models.FloatField(default=0)
+    module5 = models.FloatField(default=0)
+    module6 = models.FloatField(default=0)
+    module7 = models.FloatField(default=0)
+    module8 = models.FloatField(default=0)
+    module9 = models.FloatField(default=0)
+    module10 = models.FloatField(default=0)
+    module11 = models.FloatField(default=0)
+    module12 = models.FloatField(default=0)
+    module13 = models.FloatField(default=0)
+    module14 = models.FloatField(default=0)
+    module15 = models.FloatField(default=0)
+    module16 = models.FloatField(default=0)
+    module17 = models.FloatField(default=0)
+    module18 = models.FloatField(default=0)
 
-# Create your models here.
-'''
-class Transaction(models.Model):
-    tradeid = models.PositiveIntegerField(default=0)
-    module = models.PositiveSmallIntegerField(default=0)
-    test = models.BooleanField(default=0)
-    truth = models.BooleanField(default=0)
-
-class Data(models.Model):
-    accuracy = models.FloatField(default=0)
-    precision = models.FloatField(default=0)
-    recall = models.FloatField(default=0)
-    disturb = models.FloatField(default=0)
-
-class ModuleS(models.Model):
-    sid = models.PositiveIntegerField(default=0)
-    test = models.BooleanField(default=0)
-    truth = models.BooleanField(default=0)
-
-class ModuleA(models.Model):
-    aid = models.PositiveIntegerField(default=0)
-    test = models.BooleanField(default=0)
-    truth = models.BooleanField(default=0)
-
-class ModuleR(models.Model):
-    rid = models.PositiveIntegerField(default=0)
-    test = models.BooleanField(default=0)
-    truth = models.BooleanField(default=0)
-
-class ModuleP(models.Model):
-    pid = models.PositiveIntegerField(default=0)
-    test = models.BooleanField(default=0)
-    truth = models.BooleanField(default=0)
-'''
 
 class CaesarData(models.Model):
     caesarid = models.CharField(max_length=30, null=True)
