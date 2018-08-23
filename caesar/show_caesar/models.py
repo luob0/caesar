@@ -18,6 +18,7 @@ class Trade(models.Model):
     disturb = models.FloatField(default=0)
 
 # Create your models here.
+'''
 class Transaction(models.Model):
     tradeid = models.PositiveIntegerField(default=0)
     module = models.PositiveSmallIntegerField(default=0)
@@ -49,6 +50,7 @@ class ModuleP(models.Model):
     pid = models.PositiveIntegerField(default=0)
     test = models.BooleanField(default=0)
     truth = models.BooleanField(default=0)
+'''
 
 class CaesarData(models.Model):
     caesarid = models.CharField(max_length=30, null=True)

@@ -30,10 +30,10 @@ for row in file:
         if row[8] == '':
             row[8] = 'null'
 
-        if row[14] == '':
-            row[14] = 'null'
+        if row[15] == '':
+            row[15] = 'null'
         else:
-            row[14] = "'"+row[14]+"'"
+            row[15] = "'"+row[15]+"'"
 
         if row[16] == '':
             row[16] = 'null'
@@ -53,7 +53,7 @@ for row in file:
 
         if row[54] == '':
             row[54] = 'null'
-        mysql = "insert into show_caesar_caesardata value("+str(id)+","+row[1]+","+row[4]+","+row[5]+","+row[6]+","+row[8]+","+row[14]+","+row[16]+","+row[23]+","+row[31]+","+row[44]+","+row[54]+");"
+        mysql = "insert into show_caesar_caesardata value("+str(id)+","+row[1]+","+row[4]+","+row[5]+","+row[6]+","+row[8]+","+row[15]+","+row[16]+","+row[23]+","+row[31]+","+row[44]+","+row[54]+");"
         print(mysql)
         # print('\n')
         cursor.execute(mysql)
@@ -65,7 +65,7 @@ for row in file:
         print('row5: '+row[5])
         print('row6: '+row[6])
         print('row8: '+row[8])
-        print('row14: '+row[14])
+        print('row14: '+row[15])
         print('row16: '+row[16])
         print('row23: '+row[23])
         print('row31: '+row[31])
