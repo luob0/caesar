@@ -3,24 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Caesar project">
-    <meta name="author" content="ruixin">
+    <link type="text/css" rel="stylesheet" href="../../static/home/css/signin.css" />
+    	<script src="../../static/home/js/jquery.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    </script>
 
     <script>
-      function test(){
-        content=document.getElementById("text").value;
+      function login(){
+        var username=$("#username").val();
+        var password=$("#password").val();
+        var dataValue= new Object();
+        dataValue.username = username;
+        dataValue.password = password;
         $.ajax({
-        url:"signin",
-        type:"GET",
-        // dataType: 'json',
-        data:{"value":content},
-        traditional:true,
-        success: function(data){
-          // alert(content);
-        },
+          url:"signin",
+          type:"GET",
+          //dataType: 'json',
+          data:{"value":dataValue},
+          traditional:true,
+          success: function(data){
+            alert(data);
+          },
         error: function(){
           alert("ajax_error");
         },
@@ -29,8 +32,46 @@
     </script>
   </head>
   <body>
-    <input id="text" type="text" name="test">
-    <input id="botton" type="submit" value="submit" onclick="test()">
+    <!-- <input id="text" type="text" name="test">
+    <input id="botton" type="submit" value="submit" onclick="test()"> -->
+    <div class="wrap">
+      <div class="shade">
+        </div>
+        <form class="" action="signin" method="get">
+
+      <table>
+        <tr class="tr-one">
+          <td>
+            <p>CAESAR &nbsp&nbsp LOGIN</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span >&nbsp&nbsp&nbsp USERNAME :  </span>
+            <span>
+              <input type="text" name="username" id="username" value="">
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span >&nbsp&nbsp&nbsp PASSWORD : </span>
+            <span>
+              <input type="password" name="password" id="password"  value="">
+            </span>
+          </td>
+        </tr>
+        <tr class="tr-four">
+          <td>
+            <span>
+              <button type="button" name="button" value="submit">LOGIN IN</button>
+            </span>
+          </td>
+        </tr>
+      </table>
+    </form>
+    </div>
+
   </body>
 </html>
 

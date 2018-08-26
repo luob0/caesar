@@ -1,1 +1,105 @@
-<p>home</p>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>home</title>
+		<link type="text/css" rel="stylesheet" href="../../static/home/css/home.css" />
+	    <link href="../../static/home/css/jquery.fullpage.css" rel="stylesheet">
+		<script src="../../static/home/js/jquery.min.js"></script>
+		<script src="../../static/home/js/jquery.fullpage.js"></script>
+		<script src="../../static/home/js/home.js"></script>
+	</head>
+	<body>
+		<div class="nav">
+			<ul class="nav-menu">
+				<li class="logo nav-item">CAESAR</li>
+				<li class="nav-item"><a href="home">Home</a></li>
+				<li class="nav-item"><a href="caesar">Feature</a></li>
+				<li class="nav-item"><a href="signin">Sign in</a></li>
+				<!-- <li class="nav-item"><a href="about.html">Streaming</a></li> -->
+			</ul>
+		</div>
+
+		<div id="fullpage">
+		    <div class="section" >
+		    	<div  class="panel" id="slideshow">
+		    		<div class="shade"></div>
+		    		<p class="logo-word">THE MOST POWER WAY TO PROTECT YOUR TRANSACTION</p>
+					 <ul >
+						 <li>
+						 	<a class="btn btn-learn" href="home.html">LEARN MORE</a>
+						 	<img class="banner-img" src="../../static/home/img/2.png">
+
+						 </li>
+						 <li>
+						 	<a class="btn btn-learn" href="home.html">LEARN MORE</a>
+						 	<img class="banner-img" src="../../static/home/img/3.png">
+						 </li>
+						 <li>
+						 	<a class="btn btn-learn" href="home.html">LEARN MORE</a>
+						 	<img class="banner-img"src="../../static/home/img/4.png">
+						 </li>
+					 </ul>
+
+		 	        <div id="slideshow-nav"></div>
+		       </div>
+		    </div>
+		    <div class="section" style="background-image: url(../../static/home/img/1.png);">
+		    	<p class="info">THE SECRET OF AE</p>
+		    	<a class="btn-more" href="home.html">MORE</a>
+		    </div>
+		    <div class="section" style="background-image: url(../../static/home/img/5.png);">
+		    	<p class="info">THE SECRET OF SA</p>
+		    	<a class="btn-more" href="home.html">MORE</a>
+		    </div>
+		    <div class="section" style="background-image: url(../../static/home/img/6.png);">
+		    	<p class="info">THE SECRET OF RR</p>
+		    	<a class="btn-more" href="home.html">MORE</a>
+		    </div>
+
+	    </div>
+		<!--<div  class="panel" id="slideshow">
+			 <ul>
+				 <li><img src="img/one.png" alt="gakki is mine"></li>
+				 <li><img src="img/two.jpg" alt="gakki is mine"></li>
+				 <li><img src="img/three.jpg" alt="gakki is mine"></li>
+			 </ul>
+
+	 	   <div id="slideshow-nav"></div>
+	    </div>-->
+
+
+
+	    <!--<div class="panel" style="background-image:url(img/two.jpg)"></div>
+
+        <div class="panel" style="background-image: url(img/three.jpg);"></div>
+        -->
+
+
+    <script>
+
+$(function(){
+	$('#return-top').hide();
+	$(function(){
+		$(window).scroll(function(){
+			if($(window).scrollTop()>300){
+				$('#return-top').fadeIn(300);
+				}
+				else{$('#return-top').fadeOut(200);}
+
+			});
+			$('#return-top').click(function(){
+
+				$('body,html').animate({scrollTop:0},300);
+				return false;
+
+				})
+
+		})
+
+
+	})
+</script>
+
+	</body>
+</html>

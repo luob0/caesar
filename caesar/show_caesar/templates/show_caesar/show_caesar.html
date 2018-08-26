@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -10,6 +10,7 @@
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <script>
+
       i = 0
       function test(){
         i = i+1
@@ -30,13 +31,997 @@
     </script>
   </head>
   <body>
-    <!-- <input id="text" type="text" name="test"> -->
     <input id="botton" type="submit" value="submit" onclick="test()">
   </body>
-</html>
+</html> -->
 
 <!-- <p>This is a sign in page!</p>
 <p></p>
 
 <input type="text" name="test">
 <input type="submit" value="submit"> -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Caesar</title>
+		<link type="text/css" rel="stylesheet" href="../../static/show_caesar/css/feature.css" />
+		<script src="../../static/show_caesar/js/jquery.min.js"></script>
+		<script src="../../static/show_caesar/js/feature.js"></script>
+		<script src="../../static/show_caesar/js/echarts.js"></script>
+		<script src="../../static/show_caesar/js/echarts-gl.js"></script>
+
+		  <script>
+				var time = 200;
+				var j = 1;
+				var valuesData = 1;
+				var recall = 0;
+				var disturb = 0;
+				 var module = 0;
+				 var accuracy = 0;
+				 var precision = 0;
+				 var isCorrect = false;
+				 var ae = 0;
+				 var sa = 0;
+				 var rr = 0;
+				 var p = 0;
+				 var k = 0;
+				 var Transaction_ID = 0;
+				 var Transaction_Card_Number = 0;
+				 var Transaction_Card_Type = 0;
+				 var Transaction_Code = 0;
+				 var ransaction_Type = 0;
+				 var Transaction_Time = 0;
+				 var Transaction_Amount = 0;
+				 var Merchant_Code = 0;
+				 var Signature_Verification_method = 0;
+				 var Customary_IP_Tag = 0;
+				 var Fraudulent_Tag = 0;
+				 var Transaction_ID_red = 0;
+				 var Transaction_Card_Number_red = 0;
+				 var Transaction_Card_Type_red = 0;
+				 var Transaction_Code_red = 0;
+				 var ransaction_Type_red = 0;
+				 var Transaction_Time_red = 0;
+				 var Transaction_Amount_red = 0;
+				 var Merchant_Code_red = 0;
+				 var Signature_Verification_method_red = 0;
+				 var Customary_IP_Tag_red = 0;
+				 var Fraudulent_Tag_red = 0;
+				 var l = 0;
+
+				 var module0 = 0;
+				 var module1 = 0;
+				 var module2 = 0;
+				 var module3 = 0;
+				 var module4 = 0;
+				 var module5 = 0;
+				 var module6 = 0;
+				 var module7 = 0;
+				 var module8 = 0;
+				 var module9 = 0;
+				 var module10 = 0;
+				 var module11 = 0;
+				 var module12 = 0;
+				 var module13 = 0;
+				 var module14 = 0;
+				 var module15 = 0;
+				 var module16 = 0;
+				 var module17 = 0;
+				 var module18 = 0;
+
+
+				 /**
+				 **清除函数
+				 */
+				function clearAll(){
+						$("#arrow-right").hide();
+						$("#precheck-picture").hide();
+						$("#arrow-down").hide();
+						$("#advert").hide();
+						$("#ae").attr("src","");
+						$("#sa").attr("src","");
+						$("#rr").attr("src","");
+						$("#headerImg").attr("src","../../static/show_caesar/img/brain_gray.png");
+						$("#tr").css({'color':'#33CCFF'});
+					};
+				  $(document).ready(function(){
+						$("#headerImg").attr("src","../../static/show_caesar/img/brain_gray.png");
+						$("#ae").attr("src","../../static/show_caesar/img/blue_ae.png");
+						$("#sa").attr("src","../../static/show_caesar/img/blue_sa.png");
+						$("#rr").attr("src","../../static/show_caesar/img/blue_rr.png");
+					});
+		     function onebyone() {
+                 clearAll();
+				 k++;
+				 $("#number").html(k);
+		       $.ajax({
+			       url:"caesar",
+			       type:"GET",
+			       data:{"value":valuesData},
+			       traditional:true,
+			       success: function(data){
+							var jsonObj = JSON.parse( data );
+						 	recall = jsonObj.recall;
+							disturb = jsonObj.disturb;
+						 	module = jsonObj.module;
+						 	accuracy = jsonObj.accuracy;
+						 	precision = jsonObj.precision;
+						    isCorrect = jsonObj.test;
+							ae = jsonObj.ae;
+							sa = jsonObj.sa;
+							rr = jsonObj.rr;
+							p = jsonObj.p;
+							Transaction_ID = jsonObj.Transaction_ID;
+							Transaction_Card_Number = jsonObj.Transaction_Card_Number;
+							Transaction_Card_Type = jsonObj.Transaction_Card_Type;
+							Transaction_Code = jsonObj.Transaction_Code;
+							Transaction_Type = jsonObj.Transaction_Type;
+							Transaction_Time = jsonObj.Transaction_Time;
+							Transaction_Amount = jsonObj.Transaction_Amount;
+							Merchant_Code = jsonObj.Merchant_Code;
+							Signature_Verification_method = jsonObj.Signature_Verification_method;
+							Customary_IP_Tag = jsonObj.Customary_IP_Tag;
+							Fraudulent_Tag = jsonObj.Fraudulent_Tag;
+
+							 module0 = jsonObj.module0;
+							 module1 = jsonObj.module1;
+							 module2 = jsonObj.module2;
+							 module3 = jsonObj.module3;
+							 module4 = jsonObj.module4;
+							 module5 = jsonObj.module5;
+							 module6 = jsonObj.module6;
+							 module7 = jsonObj.module7;
+							 module8 = jsonObj.module8;
+							 module9 = jsonObj.module9;
+							 module10 = jsonObj.module10;
+							 module11 = jsonObj.module11;
+							 module12 = jsonObj.module12;
+							 module13 = jsonObj.module13;
+							 module14 = jsonObj.module14;
+							 module15 = jsonObj.module15;
+							 module16 = jsonObj.module16;
+							 module17 = jsonObj.module17;
+						   module18 = jsonObj.module18;
+
+
+							pieload();
+							//加载表格数据
+							dataload();
+							pageEffect ();
+               },
+		         error: function(){
+			         // alert("ajax_error");
+			       },
+        	  });
+
+     		}
+
+
+/**
+**后台加载完成后，页面效果显示
+**/
+
+function  pageEffect (){
+		  displayEffect("arrow-right",++j);
+			displayEffect("precheck-picture",++j);
+			displayEffect("arrow-down",++j);
+
+			if (module == 0) {
+				$("#advert").hide();
+				if (isCorrect) {
+					setTimeout(function(){
+						  functionName(module);
+							$("#headerImg").attr("src","../../static/show_caesar/img/brain_red.png");
+							$("#dec").html("FRAUD");
+							l++;
+							$("#intercepted").html(l);
+							$("#tr").css({'color':'#FF0000'});
+							$("#tr_red").css({'color':'#FF0000'});
+              dataRed();
+							playSound();
+						},j*time);
+				}else
+				{
+					setTimeout(function(){
+						functionName(module);
+						 $("#headerImg").attr("src","../../static/show_caesar/img/brain.png");
+						 $("#dec").html("NOMAL");
+					},j*time);
+				}
+			}else {
+
+			displayEffect("advert",++j);
+				 if (isCorrect) {
+					 setTimeout(function(){
+						   functionName(module);
+							 $("#headerImg").attr("src","../../static/show_caesar/img/brain_red.png");
+							 $("#dec").html("FRAUD");
+							 l++;
+							 $("#intercepted").html(l);
+							 $("#tr").css({'color':'#FF0000'});
+							 $("#tr_red").css({'color':'#FF0000'});
+               dataRed();
+							 playSound();
+					 },j*time);
+				 }else
+				 {
+					setTimeout(function(){
+							   functionName(module);
+							 $("#headerImg").attr("src","../../static/show_caesar/img/brain.png");
+							 $("#dec").html("NORMAL");
+					},j*time);
+				}
+			}
+			   j= 1;
+			  valuesData++;
+
+}
+
+
+function imageAe(ae){
+	  if(ae == 0){
+			$("#ae").attr("src","../../static/show_caesar/img/blue_ae.png");
+		}else {
+			$("#ae").attr("src","../../static/show_caesar/img/red_ae.png");
+		}
+}
+function imageSa(sa){
+	  if(sa == 0){
+			$("#sa").attr("src","../../static/show_caesar/img/blue_sa.png");
+		}else {
+			$("#sa").attr("src","../../static/show_caesar/img/red_sa.png");
+		}
+}
+function imageRr(rr){
+	  if(rr == 0){
+			$("#rr").attr("src","../../static/show_caesar/img/blue_rr.png");
+		}else {
+			$("#rr").attr("src","../../static/show_caesar/img/red_rr.png");
+		}
+}
+
+
+function playSound(src){
+		var auto = $("#auto");
+		src = "http://data.huiyi8.com/2017/gha/03/17/1702.mp3";
+		auto.attr("src",src);
+	}
+
+
+function dataRed(){
+			Transaction_ID_red = Transaction_ID;
+			Transaction_Card_Number_red = Transaction_Card_Number;
+			Transaction_Card_Type_red = Transaction_Card_Type;
+			Transaction_Code_red = Transaction_Code_red;
+			ransaction_Type_red = ransaction_Type;
+			Transaction_Time_red = Transaction_Time;
+			Transaction_Amount_red = Transaction_Amount;
+			Merchant_Code_red = Merchant_Code_;
+			Signature_Verification_method_red = Signature_Verification_method;
+			Customary_IP_Tag_red = Customary_IP_Tag;
+			Fraudulent_Tag_red = Fraudulent_Tag;
+}
+
+
+
+function functionName(number) {
+	if(number==0){
+		  $("#fomular").html("p");
+	}else if(number==1){
+		  $("#fomular").html("r");
+			imageRr(rr);
+	}else if(number==2){
+		  $("#fomular").html("s");
+			imageSa(sa);
+	}else if(number==3){
+		  $("#fomular").html("a");
+			imageAe(ae);
+	}else if(number==4){
+		  $("#fomular").html("r | s");
+			imageRr(rr);
+			imageSa(sa);
+			// $(".icon05").css({"top": "-20px","right": "-30px"});
+			// $(".icon03").css({"bottom": "-50px","left": "7px"});
+	}else if(number==5){
+		  $("#fomular").html("s | a");
+			imageSa(sa);
+			imageAe(ae);
+	}else if(number==6){
+		  $("#fomular").html("r | a");
+			imageRr(rr);
+			imageAe(ae);
+	}else if(number==7){
+		  $("#fomular").html("r & s");
+			imageRr(rr);
+			imageSa(sa);
+	}else if(number==8){
+		  $("#fomular").html("s & a");
+			imageSa(sa);
+			imageAe(ae);
+	}else if(number==9){
+		  $("#fomular").html("r & a");
+			imageRr(rr);
+			imageAe(ae);
+	}else if(number==10){
+		  $("#fomular").html("r | s | a");
+			imageRr(rr);
+			imageSa(sa);
+			imageAe(ae);
+	}else if(number==11){
+		  $("#fomular").html("r & s & a");
+			imageRr(rr);
+			imageSa(sa);
+			imageAe(ae);
+	}else if(number==12){
+		  $("#fomular").html("r | (s & a)");
+			imageRr(rr);
+			imageSa(sa);
+			imageAe(ae);
+	}else if(number==13){
+		  $("#fomular").html("s | (r & a)");
+			imageRr(rr);
+			imageSa(sa);
+			imageAe(ae);
+	}else if(number==14){
+		  $("#fomular").html("a | (r & s)");
+			imageRr(rr);
+			imageSa(sa);
+			imageAe(ae);
+	}else if(number==15){
+		  $("#fomular").html("r & (s | a)");
+			imageRr(rr);
+			imageSa(sa);
+			imageAe(ae);
+	}else if(number==16){
+		  $("#fomular").html("s & (r | a)");
+			imageRr(rr);
+			imageSa(sa);
+			imageAe(ae);
+	}else if(number==17){
+		  $("#fomular").html("a & (r | s)");
+			imageRr(rr);
+			imageSa(sa);
+			imageAe(ae);
+	}else if(number==18){
+		  $("#fomular").html("(r|s) & (r|a) & (s|a)");
+			imageRr(rr);
+			imageSa(sa);
+			imageAe(ae);
+	}
+}
+
+function streaming(){
+		 $("#on").css({"background-color":"#FF0000"});
+		 $("#off").css({"background":"transparent"});
+		 onebyone();
+		 t = setTimeout("streaming()",3000);
+}
+function stopStreaming(){
+	   $("#off").css({"background-color":"#FF0000"});
+		 $("#on").css({"background":"transparent"});
+	   clearTimeout(t);
+		 setTimeout("$('#streaming').removeAttr('disabled')",800);
+}
+
+
+		      /**
+		      * 延迟显示函数
+		      * @param {Object} id
+		      * @param {Object} i
+		      */
+		    function displayEffect(id ,i){
+		     	setTimeout(function(){
+        			$("#"+id).fadeIn("slow");
+				},i*time);
+
+		     }
+
+
+				 $(document).ready(function(){
+	         pieload();
+	       });
+
+      $(document).ready(function(){
+        dataload();
+      });
+/**
+**加载表格数据
+**/
+function dataload()
+{
+        	var myChart = echarts.init(document.getElementById("bar-graph"));
+            var option = {
+							visualMap: {
+			        show:true,
+			        max: 100,
+							itemWidth:10,
+							itemHeight:200,
+							left:"8%",
+							top:"23%",
+			        inRange: {
+			            color: ['#74add1','#ffffbf','#fee090', '#fee090', '#fdae61','#313695', '#f46d43','#FF0000' ]
+			        }
+			    },
+            	itemStyle:{
+	             // color:'#FF0000',
+							   shadowColor: 'rgba(225, 0, 0, 1)',
+								 shadowOffsetX: 1,
+								 hadowOffsetY: 2,
+								 emphasis: {
+					       shadowBlur: 200,
+					       shadowColor: 'rgba(255, 0, 0, 0.5)'
+    }
+	            },
+                // title:{
+                //     text:"bar graph",
+								// 		x:"center"
+                // },
+                // tooltip:{
+                //     text:"this is tool tip"
+                // },
+                // legend:{
+								// 	orient:"vertical",
+                //     data:['percent']
+                // },
+                grid3D:{
+                	boxWidth: 120,
+			            boxDepth: 30,
+			            zlevel: -100,
+			            axisPointer: {
+		                show: true
+		        },
+			    light: {
+		            main: {
+		                intensity: 1
+		            },
+		            ambient: {
+		                intensity: 1
+		            }
+
+                }
+                },
+
+
+                xAxis3D:{
+									name:'',
+									type: 'category',
+									axisLine: {
+					            lineStyle: {
+					                color: 'rgba(255,255,255,1)'  //yAxis3D color
+					            }
+					        },
+                	axisTick: {
+		                 show: true
+		              },
+                    data:["Recall","Disturb","Accuracy","Precision"]
+                  },
+
+
+                yAxis3D:{
+									name:'',
+									type: 'category',
+                	axisTick: {
+		                 show: true
+		              },
+					        axisLine: {
+					            lineStyle: {
+					                color: 'rgba(255,255,255,1)'  //yAxis3D color
+					            }
+					        },
+					        data:[]
+	                },
+
+
+                zAxis3D:{
+									name:'',
+									type:'value',
+                	value:[],
+									axisLine: {
+					            lineStyle: {
+					                color: 'rgba(255,255,255,1)'  //yAxis3D color
+					            }
+					        },
+                	axisTick: {
+		               show: false
+		              },
+                },
+                series:[{
+                            name:["percent"],
+                            type:"bar3D",
+                            label: {
+				            show: false,
+				            textStyle: {
+				                fontSize: 20,
+				                borderWidth: 20
+				            }
+				            },
+				            itemStyle: {      //bar itemStyle
+				            opacity: 0.6
+				            },
+				            barSize: 8,
+						encode: {
+		                // 维度的名字默认就是表头的属性名
+		                x: 'x',
+		                y: 'y',
+		                z: 'data',
+								  	},
+				            emphasis: {
+				            label: {
+				                textStyle: {
+				                    fontSize: 26,
+				                    color: '#FF0000'
+				                }
+				            }
+				        },
+                            data:[[0, 1, recall], [1, 1,disturb], [2, 1, accuracy],[3,1,precision]],
+                        }]
+            };
+
+            myChart.setOption(option);
+			$("#percent-re").html(recall);
+			$("#percent-di").html(disturb);
+			$("#percent-ac").html(accuracy);
+			$("#percent-pr").html(precision);
+			// $("#intercepted").html(l);
+			// $("#number").html(k);
+
+            $("#Transaction_ID").html(Transaction_ID);
+						$("#Transaction_Card_Number").html(Transaction_Card_Number);
+						$("#Transaction_Card_Type").html(Transaction_Card_Type);
+						$("#Transaction_Code").html(Transaction_Code);
+						$("#Transaction_Type").html(ransaction_Type);
+						$("#Transaction_Time").html(Transaction_Time);
+						$("#Transaction_Amount").html(Transaction_Amount);
+						$("#Merchant_Code").html(Merchant_Code);
+						$("#Signature_Verification_method").html(Signature_Verification_method);
+						$("#Customary_IP_Tag").html(Customary_IP_Tag);
+						$("#Fraudulent_Tag").html(Fraudulent_Tag);
+
+
+						$("#Transaction_ID_red").html(Transaction_ID_red);
+						$("#Transaction_Card_Number_red").html(Transaction_Card_Number_red);
+						$("#Transaction_Card_Type_red").html(Transaction_Card_Type_red);
+						$("#Transaction_Code_red").html(Transaction_Code_red);
+						$("#Transaction_Type_red").html(ransaction_Type_red);
+						$("#Transaction_Time_red").html(Transaction_Time_red);
+						$("#Transaction_Amount_red").html(Transaction_Amount_red);
+						$("#Merchant_Code_red").html(Merchant_Code_red);
+						$("#Signature_Verification_method_red").html(Signature_Verification_method_red);
+						$("#Customary_IP_Tag_red").html(Customary_IP_Tag_red);
+						$("#Fraudulent_Tag_red").html(Fraudulent_Tag_red);
+
+						$("#p").html(p);
+						$("#a").html(ae);
+						$("#s").html(sa);
+						$("#r").html(rr);
+					}
+
+					$(document).ready(function(){
+			 		 pieload();
+			 	 });
+				 function pieload(){
+					 var myCharts1 = echarts.init(document.getElementById('pie-graph'));
+ 			     var option1 = {
+ 			         // backgroundColor: 'rgb(35,38,44)',
+
+ 			         title: {
+ 			             text: '',
+ 			             left: 'center',
+ 			             top: 20,
+ 			             textStyle: {
+ 			                 color: '#00AA00'
+ 			             }
+ 			         },
+ 			         tooltip : {
+ 			             trigger: 'item',
+ 			             formatter: "{b} : {d}%"
+ 			         },
+
+ 			         // visualMap: {
+ 			         //     show: true,
+ 			         //     min: 0,
+ 			         //     max: 20,
+								// 	 itemWidth:10,
+		 						// 	itemHeight:200,
+		 						// 	left:"8%",
+		 						// 	top:"23%",
+		 			     //    inRange: {
+		 			     //        color: ['#0066FF','#00FFCC','#BBFF00', '#00FF00', '#FFBB00','#FF8800', '#FF0088','#FF0000' ]
+		 			     //    }
+ 			         // },
+ 			         series : [
+ 			             {
+ 			                name:'',
+ 			                type:'pie',
+ 			                 clockwise:'true',
+ 			                 startAngle:'0',
+ 			                 radius : '85%',
+ 			                center: ['50%', '50%'],
+ 			                data:[
+ 			                     {
+ 			                         value:module0,
+ 			                         name:'p',
+ 			                         itemStyle:{
+ 			                             normal:{
+ 			                                 color:'#FF0000',
+ 			                                 // shadowBlur:'90',
+ 			                                 // shadowColor:'rgba(0,255,255,0.8)',
+ 			                                 // shadowOffsetY:'30'
+ 			                             }
+ 			                         }
+ 			                     },
+ 		                     {
+ 			                         value:module1,
+ 		                          name:'r',
+ 			                        itemStyle:{
+ 			                            normal:{
+																		   fontSize:'20px',
+ 			                                 color:'#FF0088'
+ 			                             }
+ 			                         }
+ 			                     },
+ 			                     {
+ 			                         value:module2,
+ 			                         name:'s',
+ 			                         itemStyle:{
+ 			                             normal:{
+ 			                                color:'#FF8800'
+ 			                             }
+ 			                         }
+ 			                     },
+													 {
+															 value:module3,
+															 name:'a',
+															 itemStyle:{
+																	 normal:{
+																			color:'#FFBB00'
+																	 }
+															 }
+													 },
+													 {
+															 value:module4,
+															 name:'r|s',
+															 itemStyle:{
+																	 normal:{
+																			color:'#FFFF00'
+																	 }
+															 }
+													 },
+													 {
+															 value:module5,
+															 name:'s|a',
+															 itemStyle:{
+																	 normal:{
+																			color:'#008800'
+																	 }
+															 }
+													 },
+													 {
+															 value:module6,
+															 name:'r|a',
+															 itemStyle:{
+																	 normal:{
+																			color:'#BBFF00'
+																	 }
+															 }
+													 },
+													 {
+															 value:module7,
+															 name:'r&s',
+															 itemStyle:{
+																	 normal:{
+																			color:'#00FFCC'
+																	 }
+															 }
+													 },
+													 {
+															 value:module8,
+															 name:'s&a',
+															 itemStyle:{
+																	 normal:{
+																			color:'#00BBFF'
+																	 }
+															 }
+													 },
+													 {
+															 value:module9,
+															 name:'r&a',
+															 itemStyle:{
+																	 normal:{
+																			color:'#0066FF'
+																	 }
+															 }
+													 },
+													 {
+															 value:module10,
+															 name:'r|s|a',
+															 itemStyle:{
+																	 normal:{
+																			color:'#00DD00'
+																	 }
+															 }
+													 },
+													 {
+															 value:module11,
+															 name:'r&s&a',
+															 itemStyle:{
+																	 normal:{
+																			color:'#4400CC'
+																	 }
+															 }
+													 },
+													 {
+															 value:module12,
+															 name:'r|(s&a)',
+															 itemStyle:{
+																	 normal:{
+																			color:'#7700FF'
+																	 }
+															 }
+													 },
+													 {
+															 value:module13,
+															 name:'s|(r&a)',
+															 itemStyle:{
+																	 normal:{
+																			color:'#9900FF'
+																	 }
+															 }
+													 },
+													 {
+															 value:module14,
+															 name:'a|(r&s)',
+															 itemStyle:{
+																	 normal:{
+																			color:'#FF00FF'
+																	 }
+															 }
+													 },
+													 {
+															 value:module15,
+															 name:'r&(s|a)',
+															 itemStyle:{
+																	 normal:{
+																			color:'#FFB6C1'
+																	 }
+															 }
+													 },
+													 {
+															 value:module16,
+															 name:'s&(r|a)',
+															 itemStyle:{
+																	 normal:{
+																			color:'#abd983'
+																	 }
+															 }
+													 },
+													 {
+															 value:module17,
+															 name:'a&(r|s)',
+															 itemStyle:{
+																	 normal:{
+																			color:'#F4A460'
+																	 }
+															 }
+													 },
+													 {
+															 value:module18,
+															 name:'(r|s)&(r|a)&(s|a)',
+															 itemStyle:{
+																	 normal:{
+																			color:'#87CECB'
+																	 }
+															 }
+													 },
+
+ 			                 ],
+ 			             }
+ 			         ]
+ 			     };
+ 			     myCharts1.setOption(option1);
+				 }
+
+
+		  </script>
+	</head>
+	<body>
+		<div class="nav">
+			<ul class="nav-menu">
+				<li class="logo nav-item">CAESAR</li>
+				<!-- <li class="nav-item"><a href="home.html"></a></li> -->
+				<li class="nav-item"><a href="caesar">Caesar</a></li>
+				<!-- <li class="nav-item"><a href="login.html"></a></li> -->
+				<li class="nav-item"><a id="button_stream" onClick="streaming()">Streaming</a></li>
+				<li class="nav-item">
+					<span class="stream" onClick="streaming()" id="on">on</span>
+					<span class="unstream" onClick="stopStreaming()" id="off">off</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="wrap">
+			<div class="shade">
+			</div>
+			<div class="row-first">
+				<div class="redis-picture" onclick="onebyone()">
+	    		   <img  class="redis" src="../../static/show_caesar/img/redis.png">
+	    	    </div>
+
+	    	    <!-- <div class="arr-right" id="one-arr-right">
+	    	    </div>
+	    	    <div class="arr-down" id="one-arr-down">
+	    	    </div>
+	    	    <div class="arrow arrow-one" id="arrow-one"></div>
+	    	    <div class="arrow arrow-two" id="arrow-two"></div> -->
+
+						<div class="arrow-right" id="arrow-right">
+			    		   <img  id="arrow-r" src="../../static/show_caesar/img/arrow_r.png">
+	    	    </div>
+						<div class="arrow-down" id="arrow-down">
+			    		   <img  id="arrow-d" src="../../static/show_caesar/img/arrow_d.png">
+	    	    </div>
+	    	    <div class="precheck-picture" id="precheck-picture">
+							<img  class="precheck" src="../../static/show_caesar/img/precheck_white01.png">
+	    		   <!-- <a class="btn btn-precheck" id="btn-precheck">PRECHECK</a> -->
+	    	    </div>
+			</div>
+			<!--<div class="row-second">
+				<div class="arrow-down">
+					<img  id="arrow-no" src="img/arrow_no.png">
+				</div>
+			</div>-->
+			<div class="row-three">
+				<div class="img-header">
+    			    <img  id="headerImg" src="../../static/show_caesar/img/brain_gray.png">
+							<audio src="" autoplay="autoplay" id="auto">
+
+							</audio>
+    	        </div>
+    	        <div id="advert">
+    	        	<div class="bg1">
+    	        	  <div>
+		                <img id="ae" src="" alt="" class="icon01">
+		                <img id="sa" src="" alt="" class="icon03">
+		                <img id="rr" src="" alt="" class="icon05">
+                      </div>
+    	            </div>
+    	        </div>
+			</div>
+
+			<!--Strategy开始-->
+  	<div class="info-display" id="info-display">
+			<!-- <p>STRATEGY & DECISION</p> -->
+			<p>
+          <span>STRATEGY : </span>
+					<span id="fomular" class="green">fomular</span>
+			</p>
+			<p>
+				<span>DECISION : </span>
+				<span id="dec" class="green">decision</span>
+      <p>
+					<span>P : </span>
+					<span id="p" class="green">0</span>
+          <span>&nbsp&nbsp</span>
+					<span>A : </span>
+					<span id="a" class="green">0</span>
+          <span>&nbsp&nbsp</span>
+					<span>  S : </span>
+					<span id="s" class="green">0</span>
+          <span>&nbsp&nbsp</span>
+					<span>R : </span>
+					<span id="r" class="green">0</span>
+      </p>
+			</p>
+			<p>
+				<span>INTERCEPTED : </span>
+				<span id="intercepted" class="green">0</span>
+			</p>
+			<p>
+				<span>NUMBER : </span>
+				<span id="number" class="green">0</span>
+			</p>
+  		<!-- <marquee direction=left scrollamount=6 loop="infinite"  id="fomular">
+  			fomular
+  		</marquee> -->
+  	</div>
+    <!--文字滚动结束-->
+
+    <!--  柱状图-->
+    <div class="bar" id="bar-graph">
+    </div>
+
+		<!-- pie -->
+		<div class="pie" id="pie-graph">
+    </div>
+
+		<div class="percent-display" id="percent-display">
+			<p>
+				  <span>&nbsp&nbsp&nbsp</span>
+          <span>Recall : </span>
+					<span id="percent-re" class="green">00</span>
+
+          <span>&nbsp&nbsp&nbsp</span>
+					<span>Disturb : </span>
+					<span id="percent-di" class="green">00</span>
+
+					<span>&nbsp&nbsp&nbsp</span>
+          <span>Accuracy : </span>
+					<span id="percent-ac" class="green">00</span>
+
+          <span>&nbsp&nbsp&nbsp</span>
+					<span>Precision : </span>
+					<span id="percent-pr" class="green">00</span>
+
+			<!-- <table class="table-header">
+				<tr>
+					<td>Transaction_ID</td>
+					<td>Transaction_Card_Number</td>
+					<td>Transaction_Card_Type</td>
+					<td>Transaction_Code</td>
+					<td>Transaction_Type</td>
+					<td>Transaction_Time</td>
+					<td>Transaction_Amount</td>
+					<td>Merchant_Code</td>
+					<td>Signature_Verification_method</td>
+					<td>Customary_IP_Tag</td>
+					<td>Fraudulent_Tag</td>
+				</tr>
+			</table> -->
+
+			<!-- <div class="serch">
+				   <p>
+						 <span>
+						 	<input type="text" name="" value="">
+						 </span>
+						<span onClick="serch()" class="serch-btn" id="serch-btn">SERCH</span>
+					</p>
+			</div> -->
+
+		  <div class="table-wrap">
+					<table class="table">
+						<tr>
+							<td>Transaction_ID</td>
+							<td>T_Card_Number</td>
+							<td>T_Card_Type</td>
+							<td>T_Code</td>
+							<td>T_Type</td>
+							<td>T_Time</td>
+							<td>T_Amount</td>
+							<td>Merchant_Code</td>
+							<td>Verification</td>
+							<td>IP_Tag</td>
+							<td>Fraudulent_Tag</td>
+						</tr>
+					<tr id="tr" class="tr_blue">
+							<td id="Transaction_ID">0</td>
+							<td id="Transaction_Card_Number">0</td>
+							<td id="Transaction_Card_Type">0</td>
+							<td id="Transaction_Code">0</td>
+							<td id="Transaction_Type">0</td>
+							<td id="Transaction_Time">0</td>
+							<td id="Transaction_Amount">0</td>
+							<td id="Merchant_Code">0</td>
+							<td id="Signature_Verification_method">0</td>
+							<td id="Customary_IP_Tag">0</td>
+							<td id="Fraudulent_Tag">0</td>
+					</tr>
+						<tr id="tr_two" class="tr_two">
+							<td id="Transaction_ID_red">0</td>
+							<td id="Transaction_Card_Number_red">0</td>
+							<td id="Transaction_Card_Type_red">0</td>
+							<td id="Transaction_Code_red">0</td>
+							<td id="Transaction_Type_red">0</td>
+							<td id="Transaction_Time_red">0</td>
+							<td id="Transaction_Amount_red">0</td>
+							<td id="Merchant_Code_red">0</td>
+							<td id="Signature_Verification_method_red">0</td>
+							<td id="Customary_IP_Tag_red">0</td>
+							<td id="Fraudulent_Tag_red">0</td>
+						</tr>
+				  </table>
+		  </div>
+		</div>
+	</body>
+</html>
