@@ -12,20 +12,26 @@
       function login(){
         var username=$("#username").val();
         var password=$("#password").val();
-        var dataValue= new Object();
-        dataValue.username = username;
-        dataValue.password = password;
+        // var dataValue= new Object();
+        // dataValue.username = username;
+        // dataValue.password = password;
         $.ajax({
           url:"signin",
           type:"GET",
-          //dataType: 'json',
-          data:{"value":dataValue},
+          dataType: 'json',
+          data:{"value":password},
           traditional:true,
           success: function(data){
-            alert(data);
+            if(data['result']==1)
+            {
+              window.location.href="caesar";
+            }
+            else{
+              alert("Account or Password was incorretcly!");
+            }
           },
         error: function(){
-          alert("ajax_error");
+          // alert("ajax_error");
         },
         });
       }
@@ -64,7 +70,7 @@
         <tr class="tr-four">
           <td>
             <span>
-              <button type="button" name="button" value="submit">LOGIN IN</button>
+              <button type="button" name="button" value="submit" onclick="login()">LOGIN IN</button>
             </span>
           </td>
         </tr>
